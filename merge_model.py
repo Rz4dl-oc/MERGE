@@ -33,12 +33,10 @@ class QKVInviBasedAttn(nn.Module):
 
 
 class MERGE_LSTM(nn.Module):
-    def __init__(self, npat, nT, nF0, nF, nclass, dropout, nheads, static_features, attn_dk):
+    def __init__(self, nF0, nF, nclass, dropout, nheads, static_features, attn_dk):
         super(MERGE_LSTM, self).__init__()
         self.dropout = dropout
-        self.npat = npat
         self.nF0 = nF0
-        self.nT = nT
         self.nF = nF
         self.nheads = nheads
 
