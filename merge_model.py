@@ -45,7 +45,7 @@ class MERGE_LSTM(nn.Module):
 
         self.eb = nn.Linear(nF0, nF)
 
-        self.rnn = nn.LSTM(input_size=nF0, hidden_size=nF, num_layers=1, batch_first=True)  # (B, T, F)
+        self.rnn = nn.LSTM(input_size=nF, hidden_size=nF, num_layers=1, batch_first=True)  # (B, T, F)
         # self.t_attention = LinearSelfAttn(nF).cuda()
 
         self.gcDy = GATConv(nF2, nF2, num_heads=nheads).cuda()
