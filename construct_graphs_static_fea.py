@@ -51,7 +51,7 @@ def construct_graph_category_static_feature(prov_tensor, main_tensor, name_prev)
                 from_l1.append(k + cluster_size)
                 to_l1.append(j)
 
-    gender_dgl0 = dgl.graph((torch.tensor(from_l0), torch.tensor(to_l0)), num_nodes=cluster_size + 2)
-    gender_dgl1 = dgl.graph((torch.tensor(from_l1), torch.tensor(to_l1)), num_nodes=cluster_size + 2)
-    dgl.save_graphs(name_prev + ".dgl", [gender_dgl0, gender_dgl1])
+    dgl0 = dgl.graph((torch.tensor(from_l0), torch.tensor(to_l0)), num_nodes=cluster_size + 2)
+    dgl1 = dgl.graph((torch.tensor(from_l1), torch.tensor(to_l1)), num_nodes=cluster_size + 2)
+    dgl.save_graphs(name_prev + ".dgl", [dgl0, dgl1])
 
